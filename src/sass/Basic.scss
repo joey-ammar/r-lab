@@ -1,0 +1,19 @@
+@mixin reset_margin_padding {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin remove_list{
+    list-style: none;
+    text-decoration: none!important;
+}
+@mixin flex-col-ctr {
+   display: flex;
+   align-items: center;
+} 
+@mixin flex-between {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
