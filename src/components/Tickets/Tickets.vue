@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from "vue";
-import { useTicketStore } from "../../stores/ticket";
+import { useTicketStore } from "../../stores/Store";
 import Mainform from "../Mainform/MainForm.vue";
 let saveTicketInStore = useTicketStore();
 </script>

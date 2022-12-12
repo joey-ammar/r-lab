@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from "vue";
-import { useTicketStore } from "../../stores/ticket";
+import { useTicketStore } from "../../stores/Store";
 import i18n from "../../i18n";
 import Input from "../Resuable/Input/Input.vue";
 import Textarea from "../Resuable/Textarea/Textarea.vue";

@@ -1,5 +1,5 @@
 <script setup>
-import { useTicketStore } from "../../stores/ticket";
+import { useTicketStore } from "../../stores/Store";
 import { ref } from "vue";
 import i18n from "../../i18n";
 import { useRouter } from "vue-router";
@@ -51,7 +51,9 @@ const goToHome = () => {
           </div>
           <div class="col-3">
             <ul class="sub_nav">
-              <li><router-link to="/tickets">Tickets</router-link></li>
+              <li>
+                <router-link to="/tickets">Tickets</router-link>
+              </li>
               <li>
                 <router-link to="/settings">{{ $t("Settings") }}</router-link>
               </li>
@@ -59,11 +61,7 @@ const goToHome = () => {
           </div>
           <div class="right-nav">
             <ul>
-              <select
-                v-model="locale"
-                class="form-select dropdown"
-                aria-label="Default select example"
-              >
+              <select v-model="locale" class="form-select dropdown" aria-label="Default select example">
                 <option value="en">en</option>
                 <option selected value="de">de</option>
               </select>
@@ -79,11 +77,7 @@ const goToHome = () => {
     <div class="navigation_mobile">
       <div><img @click="goToHome" src="../../../public/images/logo.png" /></div>
       <div>
-        <font-awesome-icon
-          @click="toggleList"
-          class="icon-mobile"
-          icon="fa-solid fa-bars"
-        />
+        <font-awesome-icon @click="toggleList" class="icon-mobile" icon="fa-solid fa-bars" />
       </div>
     </div>
     <div v-if="showList">
@@ -93,15 +87,13 @@ const goToHome = () => {
             <input v-model="ticketNumber" placeholder="Search tickets" />
           </form>
         </li>
-        <li><router-link to="/tickets">Tickets</router-link></li>
+        <li>
+          <router-link to="/tickets">Tickets</router-link>
+        </li>
         <li>
           <router-link to="/settings">{{ $t("Settings") }}</router-link>
         </li>
-        <select
-          v-model="locale"
-          class="form-select dropdown_mobile"
-          aria-label="Default select example"
-        >
+        <select v-model="locale" class="form-select dropdown_mobile" aria-label="Default select example">
           <option value="en">en</option>
           <option selected value="de">de</option>
         </select>
@@ -124,22 +116,26 @@ const goToHome = () => {
   background-color: $color_gitlab_dark_purple;
   @include flex-col-ctr;
   font-family: $light;
+
   .nav_inside {
     .form_icon {
       position: relative;
       @include flex-col-ctr;
       margin-top: 0.6rem;
+
       .icon {
         position: absolute;
         right: 10px;
         color: $color_white;
       }
     }
+
     img {
       width: 90px;
       margin-top: 0.2rem;
       cursor: pointer;
     }
+
     input {
       margin-top: -0.2rem;
       padding: 0.3rem 1rem;
@@ -151,18 +147,22 @@ const goToHome = () => {
       font-size: 14px;
       width: 100%;
     }
+
     ul {
       margin-top: 0.6rem;
       @include flex-col-ctr;
+
       li {
         font-family: Regular;
         margin-right: 1rem;
         color: $color_white;
+
         a {
           color: $color_white;
         }
       }
     }
+
     .right-nav {
       margin-left: auto;
     }
@@ -175,6 +175,7 @@ const goToHome = () => {
   background-color: $color_gitlab_dark_purple;
   @include flex-between;
   padding: 0rem 1.5rem;
+
   .icon-mobile {
     color: $color_white;
     font-size: 20px;
@@ -187,9 +188,11 @@ const goToHome = () => {
 
 .mini-nav {
   padding: 2rem;
+
   li {
     padding: 0.4rem 0rem;
     font-size: 20px;
+
     input {
       padding: 0rem 1rem;
       outline: none;
@@ -200,10 +203,12 @@ const goToHome = () => {
       font-size: 16px;
       width: 60%;
     }
+
     a {
       color: $color_white;
     }
   }
+
   background-color: $color_gitlab_dark_purple;
   color: $color_white;
 }
@@ -214,6 +219,7 @@ const goToHome = () => {
   background-color: transparent !important;
   color: $color_gitlab_orange;
 }
+
 .dropdown_mobile {
   width: 10% !important;
 }
