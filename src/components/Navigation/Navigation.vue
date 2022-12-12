@@ -34,8 +34,8 @@ const goToHome = () => {
 -->
 <template>
   <!--Desktop Mode-->
+  
   <div class="navigation_desktop">
-    <div class="container">
       <div class="row">
         <div class="nav_inside d-flex">
           <div class="col-1">
@@ -69,7 +69,6 @@ const goToHome = () => {
           </div>
         </div>
       </div>
-    </div>
   </div>
 
   <!--Navigation Mobile - Tablet-->
@@ -114,9 +113,7 @@ const goToHome = () => {
 .navigation_desktop {
   height: 10vh;
   background-color: $color_gitlab_dark_purple;
-  @include flex-col-ctr;
   font-family: $light;
-
   .nav_inside {
     .form_icon {
       position: relative;
@@ -243,4 +240,83 @@ const goToHome = () => {
     margin-left: 1rem;
   }
 }
+
+
+@media screen and (min-width: $bp-desktop-small) and (max-width: $bp-content-shift) {
+  .navigation_desktop {
+      width: 100%;
+      padding: 4rem;
+      
+    .nav_inside {
+
+      img {
+        width: 90px;
+        margin: 0px;
+      }
+
+      input {
+        font-size: 1.3rem;
+        margin-top: -.5rem;
+        padding: 0.5rem 1rem;
+      
+      }
+
+      ul {
+        margin-top: 0.6rem;
+        @include flex-col-ctr;
+
+        li {
+            font-size: 1.3rem;
+        }
+      }
+
+      .right-nav {
+        margin-left: auto;
+        select {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    }
+}
+
+@media screen and (min-width: $bp-content-shift) {
+    .navigation_desktop {
+      width: 100%;
+      padding: 4rem;
+      
+    .nav_inside {
+
+      img {
+        width: 120px;
+        margin: 0px;
+      }
+
+      input {
+        font-size: 1.3rem;
+        margin-top: -.5rem;
+        padding: 0.5rem 1rem;
+      
+      }
+
+      ul {
+        margin-top: 0.6rem;
+        @include flex-col-ctr;
+
+        li {
+            font-size: 1.4rem;
+        }
+      }
+
+      .right-nav {
+        margin-left: auto;
+        select {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    }
+}
+
+
 </style>
