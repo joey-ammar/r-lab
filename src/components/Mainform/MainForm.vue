@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, storeToRefs3 } from "vue";
 import { useTicketStore } from "../../stores/Store";
 import i18n from "../../i18n";
 import Input from "../Resuable/Input/Input.vue";
@@ -9,8 +9,9 @@ import Button from "../Resuable/Button/Button.vue";
 import GitlabDropDown from "../Resuable/GitlabelDropdown/GitlabelDropdown.vue";
 import Row from "../Resuable/Row/Row.vue";
 const { t } = i18n.global;
-let saveTicketInStore = useTicketStore();
 
+const store = useTicketStore();
+let {priority} =  storeToRefs(store);
 
 /* Project */
 let selectedProject = ref(null);
@@ -34,7 +35,7 @@ let form = reactive({
 <template>
     <div class="wrapper">
         <div class="push-form">
-            <h1>{{ saveTicketInStore.ticketNumberStore }}</h1>
+            {{priority}}
             <form>
                 <Row>
                     <Input :value="form.ticket" :placeholder="t('TicketNumber')" icon="pi pi-user" type="text" />
@@ -46,20 +47,20 @@ let form = reactive({
                         icon="pi pi-info-circle" />
                 </Row>
 
-                <!--Project-->
+                <!--projectName-->
                 <Row>
                     <GitlabDropDown :placeholder="t('projectName')" :prefix="selectedProject" :options="form.project"
                         :about="information" full />
                 </Row>
 
-                <!--Project-->
+               <!--projectLabel / Teams-->
                 <Row>
                     <GitlabDropDown :placeholder="t('projectLabel')" :prefix="selectedProject" :options="form.project"
                         :about="information" full />
                     <GitlabDropDown :placeholder="t('Teams')" :prefix="selectedProject" :options="form.project"
                         :about="information" full />
                 </Row>
-                <!--Project-->
+                <!--Priorities / Quap-->
                 <Row>
                     <GitlabDropDown :placeholder="t('Priorities')" :prefix="selectedProject" :options="form.project"
                         :about="information" full />
