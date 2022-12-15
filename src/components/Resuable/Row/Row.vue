@@ -18,7 +18,13 @@ function Columns(props, { slots }) {
     <slot></slot>
   </Columns>
 </template>
+
+
+
 <style lang="scss">
+@import "../../../sass/Basic.scss";
+@import "../../../sass/Variable.scss";
+
 .row {
   display: flex;
   align-content: flex-end;

@@ -8,5 +8,19 @@
   </div>
 </template>
 <style scoped lang="scss">
+  @import "../../../sass/Basic.scss";
+  @import "../../../sass/Variable.scss";
+
+  @media
+       screen and (min-width: $bp-desktop-small) and (max-width: $bp-content-shift),
+       screen and (min-width: $bp-content-shift)  {
+        input  {
+          padding: 10px;
+        }
+        label {
+          font-size: 20px;
+        }
+  }
+
 
 </style>

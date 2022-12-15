@@ -14,6 +14,10 @@ const props = defineProps({
 
 </template>
 <style scoped lang="scss">
+
+@import "../../../sass/Basic.scss";
+@import "../../../sass/Variable.scss";
+
 .bg {
     font-size: 1.3rem;
     display: inline-block;

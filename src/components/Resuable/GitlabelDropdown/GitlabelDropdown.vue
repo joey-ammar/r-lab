@@ -38,7 +38,24 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
-.full-width {
-  width: 100% !important;
-}
+
+@import "../../../sass/Basic.scss";
+@import "../../../sass/Variable.scss";
+
+
+      @media
+       screen and (min-width: $bp-desktop-small) and (max-width: $bp-content-shift),
+       screen and (min-width: $bp-content-shift)  {
+          .full-width {
+            padding: 20px 0px;
+            font-size: 20px;
+          }
+         span {
+            color: #afb4b8;
+            font-size: 20px;
+          }
+       }
+      .full-width {
+        width: 100% !important;
+      }
 </style>

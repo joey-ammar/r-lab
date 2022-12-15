@@ -33,7 +33,7 @@ let form = reactive({
 </script>
 <template>
     <div class="wrapper">
-        <div class="container push-form">
+        <div class="push-form">
             <h1>{{ saveTicketInStore.ticketNumberStore }}</h1>
             <form>
                 <Row>
@@ -97,4 +97,19 @@ let form = reactive({
 .radio-btn {
     margin-left: 3px;
 }
+
+@media screen and (max-width: $bp-desktop-small),
+       screen and (min-width: $bp-desktop-small), 
+       screen and (min-width: $bp-desktop-small) and (max-width: $bp-desktop), 
+       screen and (min-width: $bp-desktop-small) and (max-width: $bp-content-shift), 
+       screen and (min-width: $bp-desktop-small) and (max-width: $bp-content-shift),
+       screen and (min-width: $bp-content-shift)  {
+    input, .wrapper, .push-form {
+        width: 90%;
+        margin: 10rem auto;
+    }
+}
+
+
+
 </style>
